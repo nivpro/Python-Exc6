@@ -1,0 +1,64 @@
+#########################################
+# Question 1 - do not delete this comment
+#########################################
+def how_many_common_letters(s1, s2):
+    counter = 0
+    for char in s1:
+        if char in s2:
+            counter += 1
+    return counter
+
+
+
+#########################################
+# Question 2 - do not delete this comment
+#########################################
+def clean_word(word, chars_list):
+    for char in chars_list:
+        word = word.lower().replace(char, '')
+    return word
+
+
+
+#########################################
+# Question 3 - do not delete this comment
+#########################################
+def ciel_list_of_floats_in_place(floats_list):
+    for i in range(len(floats_list)):
+        if floats_list[i] > 0 and int(floats_list[i]) != floats_list[i]:
+            floats_list[i] = int(floats_list[i])+1.0
+        else:
+            floats_list[i] = int(floats_list[i])+0.0
+        # this will also work:
+        # floats_list[i] = int(floats_list[i])+float(floats_list[i]>0)
+        
+
+
+#########################################
+# Question 4 - do not delete this comment
+#########################################
+def clean_words_of_sentence(sentence):
+    result = []
+    for word in sentence.split():
+        # you can put the chars in a list but,
+        # it turns out that as a string it will also work...
+        result.append(clean_word(word, ',.%?!#$')) 
+    return result
+
+
+
+#########################################
+# Question 5 - do not delete this comment
+#########################################
+def is_valid_pattern(p):
+    counter = 0
+    for c in p:
+        if c =='(':
+            counter += 1
+        else:
+            counter -= 1
+        if counter < 0:
+            break
+    return counter == 0
+
+
